@@ -22,6 +22,7 @@
     self.imageView.center = self.view.center;
     self.pathView.frame = self.view.bounds;
     
+    
     CGFloat distance = 100;
     CGPoint middlePoint = self.view.center;
     CGPoint leftPoint = CGPointMake(middlePoint.x - distance, middlePoint.y);
@@ -41,7 +42,7 @@
     
     keyAnimation.autoreverses = YES;//回到起点
     keyAnimation.repeatCount = MAXFLOAT;
-    keyAnimation.rotationMode = kCAAnimationRotateAutoReverse;
+    keyAnimation.rotationMode = kCAAnimationRotateAuto;
     keyAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     
     [self.imageView.layer addAnimation:keyAnimation forKey:@"keyAnimation"];
@@ -55,6 +56,7 @@
         _imageView = [[UIImageView alloc] init];
         _imageView.backgroundColor = [UIColor brownColor];
         _imageView.frame = CGRectMake(0, 0, 50, 50);
+        _imageView.image = [UIImage imageNamed:@"gesture.png"];
     }
     return _imageView;
 }
